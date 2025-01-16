@@ -1,0 +1,206 @@
+
+<!-- <script src="https://cdn.statically.io/gh/allanfals/sanbersstudio/fe350ab0/convert.js"></script> -->
+<style>
+          #FrmCnv{
+        display:block;
+        margin:auto;
+        margin-block-end:0;
+        color:#2f303f;
+        max-width: 800px;
+        width:100%;
+        background:#e3e0d3;
+        padding:10px;
+        border-radius:10px;
+        }
+
+        textarea{
+          resize:none;
+          border-radius:10px;
+          height:200px; width:100%
+        }
+.judul{
+    margin:0;
+  padding:10px;
+  max-width:100%;
+    line-height:1.5em;
+    text-align:center;
+    color: #fff;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab );
+    background-size: 400% 400%;
+    -webkit-animation: gradientBG 10s ease infinite;
+            animation: gradientBG 10s ease infinite;
+                border-radius: 20px 20px 0px 0px;
+}
+
+.ket{
+   margin:0 0 3px 0;
+   background: #e3e0d3;
+     padding:10px; 
+    max-width: 100%;
+    border-radius: 0 0 20px 20px;
+    text-align: justify;
+}
+
+.mytitle{
+  max-width: 800px;
+  width:100%;
+  margin:auto;
+  display:block;
+  padding:10px;
+}
+.tombol{
+display:block;
+margin: 20px auto;
+}
+
+@-webkit-keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+.Button {
+    background-color:$(posts.background.color);
+    box-shadow:0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24);
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+  background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+  background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+  background-color:#599bb3;
+  -moz-border-radius:2px;
+  -webkit-border-radius:2px;
+  border-radius:10px;
+  display:block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:20px;
+  font-weight:bold;
+  padding:13px 32px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #3d768a;
+  display:block;
+margin: 20px auto;
+}
+
+
+.cnvxx:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAA7EAAAOxAGVKw4bAAAC5ElEQVRIibWWMY8cRRCFv6oZfMZCsgh8MkKcCAgIkHCELkMmOAHxInHxYgILRELGXyCD0OjInFzKBQ6QIFo58f0HE90P8O3d9NQj6O6ZHsyBLUHv9s7sqLveq1dPXWOA8z+OvlyD9abH/QC40zx/kZGAUyIe8dN+YiYcgBvgrDeO+0Ng5WZgLxFeEBLAMRGHBYQCFJlpZr76fvUWX320S+cvjjCG+PHXM749frrC/Qg4aTKY0rnjZty/u0vnjtWPGf4302xaQefO/bu7uBnA19x7/CnrTV9iewXosyzGGDBKhERETj/P5r48HyXGyPswwOxj4BfcH7LeOBALB42CFCIFpAKUggwaOVj7PAUkiVF5/3efvMEPn+8BrIrsRaIi+TDCEDbN9C9zCGMYjWHM+zuHLz/c5dVXHLIbva9OwGCIvNBMOGStTQXfACFAMoSQIDQbQqr7AaNnclEZFymHcMsGrsFzeQT52wQHSTngJHFFq8VtJLoYM6MZoNZuJqHCtAKEoLMcLZRVqJk8J9FFgiRwy1kYhpuKSbIs+WuEchajjN7nDIaxkM+klhJtE1zGLJGjhv1MSxIBk3WvFYAUReZ56VKi8wQXYyMRjUxVnkamKtHYaQYYWypVokJwmzJIK5EVfSeJmF2Ui2yZcSnwdplBLGqwTfBsUFNgMZ99aoqspthztMsxx2hzqBkkAdsktskX7plKYPO+KXi5ugUiO/A8ZdmqRPWoOJXEyZMzdrrgeid2OnGtnb78v9OprAtOnpwhib1bN9gOtKNKFI8wPz767enq59//4GWHJPbfeZ1337zJ+bLIRaIH+4n15hD3I0nfYHbw2Qe3uQybbHpVh+jcePvWDd7bu8nFaPRD1KInFi7KneiEe49BOnjtes/B+9M5P53Iz7GffiA0ywWcApFbZuk+AHyx6bHcPs2u4n31UG2fikMe7KcWYO4NuUfPLwCNg/6xX2vxAjCR/utri/+X938CW1q8+DPcfK4AAAAASUVORK5CYII=") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
+
+.Button:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+  background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+  background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+  background-color:#408c99;
+}
+
+</style>
+<script type="text/javascript">
+  function copy() {
+  let textarea = document.getElementById("jadi");
+  textarea.select();
+  document.execCommand("copy");
+}
+</script>
+<script type='text/javascript'>
+   function LangkahPertama( inputText, OutputText ) {
+    var ID_File = inputText.value; 
+    for (let i=0; i<jml_element_array; i++ ) {
+        var str1 = array_kata[i]
+        var str2 = str1.replace("imageanchor=\"1\"", "")
+        var str3 = str2.replace("border=\"0\"", "")
+        var str32 = str3.replace("<div class=\"separator\" style=\"clear: both;\">","")
+        var strsplit2 = str32.replace("</div>","")
+        var strsplit3 = strsplit2.replace("style=\"display: block; padding: 1em 0; text-align: center; \"","")
+
+        var str4 = strsplit3
+          var k = jml_element_array-1;
+       if (i==k) {
+      str4 = str4  + "</div>";
+      }
+       if (i==0) {
+      langkah1 = langkah1  +  "<div class=\"image fit\">" + str4;
+      }
+      else {
+      langkah1 = langkah1  + "</div>" + "\n" + "<div class=\"image fit\">" + str4;
+      }
+    }
+
+
+    var atas = "<link rel=\"stylesheet\" href=\"https://cdn.statically.io/gh/allanfals/sanbersstudio/d4b17d9a/main.css\" />" + "\n" + "<h3 class=\"judul\">TULIS JUDUL GALLERY DISINI</h3>" + "\n" + "<p class=\"ket\" style=\"text-align:center;\">Tulis Keterangan tentang Gallery di sini</p>" + "\n" + "<div class=\"columns\" id=\"columns\">" + "\n"
+    var bawah = "</div>" + "\n"
+
+    OutputText.value = atas + langkah1 + bawah;
+  }
+
+</script>
+<div class="mytitle">
+<h3 class="judul">BLOGGER GALLERY CREATOR</h3>
+<div class="ket" ><p>Ini adalah project pertama saya dalam belajar javascript, CSS, dan HTML. Tools ini hanya membantu anda membuat foto gallery di postingan blogger.<br> Cara menggunakannya adalah sebagai berikut:</p>
+<ol>
+  <li>Buat Postingan baru di blogger</li>
+  <li>Masuk pada mode/tampilan HTML</li>
+  <li>Upload seluruh foto/gambar yang akan ditampilkan</li>
+  <li>Salin teks HTML dari gambar yang diupload tersebut</li>
+  <li>Paste pada area input yang tersedia dibawah</li>
+  <li>Klik "Convert"</li>
+  <li>Copy Paste teks HTML hasil konvert ke blog anda dalam mode HTML</li>
+  <li>Edit teks Judul dan keterangan gallery</li>
+  <li>Klik Pratinjau untuk melihat hasil</li>
+</ol>
+<p></p>
+</div>
+</div>
+<div id="FrmCnv">
+<form name='form1'>
+<div class="top">
+    <textarea name='asal' placeholder="Tempel/Paste Teks HTML di sini"></textarea>
+ <input  class="button" type='button' name='bTest' value='Convert' onclick='LangkahPertama(document.form1.asal, document.form1.jadi)'>
+</div>
+
+<textarea name='jadi' id="jadi" style="width:100%; height:200px;" ></textarea>
+
+
+</form>
+
+<button class="button cnvxx" onclick="copy()">Copy to clipboard</button>
+
+</div>
+
+
